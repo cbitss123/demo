@@ -90,6 +90,18 @@ WSGI_APPLICATION = 'gaming.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ['ENGINE'],
+        'NAME': os.environ['NAME'],
+        'USER':os.environ['USER'],
+        'PASSWORD':os.environ['PASSWORD'],
+        'HOST':os.environ['HOST']
+
+
+    }
+}
+
 
 
 
@@ -146,10 +158,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
-try:
-    from gaming.local_settings import *
-except ImportError:
-    pass
+
 
 
 # Definitions
