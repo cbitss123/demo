@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block videoactive %}active{% endblock videoactive %}
+    {%load static%}
+
+    {%block content%}
+    <div class="container">
+        <section class="container customsec2 pt-5">
+            <h2 class="text-center" style="width: 35%; margin: auto;">Mods Categories</h2>
+            <hr id="customhr1" style="width: 16%;
+            height: 2px;
+            margin: 4px auto;">
+            <!-- <div id="touchwarn1" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div> -->
+          <div class="row py-3">
+            {% for c in categories %}
+            <div class="col-lg col-12 homeimg" id="img1">
+              
+               <h5><a href="{% url 'video:category_view' c.slug %}">{{c.name}}</a></h5>
+              <img class="secimg border-info" src="{{c.image_url|default_if_none:'#'}}" alt="gameplay videos">
+              
+            </div>
+            {% endfor %}
+            
+        </div>
+        </section>
+         
+    </div>
+    {%endblock content%}

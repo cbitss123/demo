@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block homeactive %}active{% endblock homeactive %}
+{% load static %}
+{% block content%}
+<div class="container" style="padding-left: 72px;padding-right:72px">
+  <section class="jumbotron bg-warning shadow mb-3 ml-2 mr-2" id="homejumbo1">
+    <div class="row">
+      
+      <div class="col-lg col-12 socialhomesec" id="fayoutube">
+        <a href="https://www.youtube.com/channel/UC_V0546N84VLWYXdAbOsrHA" target="_blank">
+          
+              <i class="fa fa-youtube fa-4x"aria-hidden="true" style="color: #1C1E29;"></i>
+              <h2 class="count">1.0k+</h2>
+              <p>Subscribers</p>
+            </a>
+          </div>
+          <div class="col-lg col-12 socialhomesec" id="fafacebook">
+            <a href="http://bit.ly/3ox1yBK" target="_blank">
+              <i class="fa fa-facebook-square fa-4x"aria-hidden="true" style="color: #1C1E29;"></i>
+              <h2 class="count">1.5k+</h2>
+              <p>Friends</p>
+            </a>
+          </div>
+          <div class="col-lg col-12 socialhomesec" id="fainstagram">
+              <a href="https://bit.ly/39g0Wdn" target="_blank"><i class="fa fa-instagram fa-4x"aria-hidden="true" style="color: #1C1E29;"></i>
+                <h2 class="count">1.5k+</h2>
+                <p>Followers</p>
+              </a>
+            </div>
+            <div class="col-lg col-12 socialhomesec" id="fatwitter">
+              <a href="https://bit.ly/39jAteP" target="_blank"><i class="fa fa-twitter fa-4x"aria-hidden="true" style="color: #1C1E29;"></i>
+                <h2 class="count">2.5k+</h2>
+                <p>Followers</p>
+              </a>
+            </div>
+          </div>
+          
+          
+        </section>
+        <!-- <section class="container-fluid" style=" text-align:center; display: flex; justify-content: space-between; flex-wrap: wrap;"> -->
+          <section class="container customsec2 pt-5">
+            <h2 class="text-center" style="width: 35%; margin: auto;">Modding Videos</h2>
+            <hr id="customhr1" style="width: 16%;
+            height: 2px;
+            margin: 4px auto;">
+            <!-- <div id="touchwarn1" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div> -->
+          <div class="row py-3">
+            
+            <div class="col-lg col-12 homeimg" id="img1">
+              
+              <h5>GTA V Modding</h5>
+              <img class="secimg border-info" src="{% static 'images/gta_PNG7.png' %}" alt="gameplay videos">
+              
+            </div>
+            
+            
+            
+            <div class="col-lg col-12 homeimg" id="img2">
+              <h5>Minecraft Modding</h5>
+              <img class="secimg border-info" src="{% static 'images/minecraft.png' %}" alt="Minecraft Gameplay">
+            </div>
+            
+            
+            
+            
+            <div class="col-lg col-12 homeimg" id="img3">
+              <h5>GTA San Andreas Modding</h5>
+              
+              <img class="secimg border-info" src="{% static 'images/freefire.jpg' %}" alt="Free Fire">
+            </div>
+            
+            
+          </div>
+        </section>
+        <!-- <section class="container customsec2 pt-5">
+          <h2 class="text-center" style="width: 35%; margin: auto;">Gaming Accessories</h2>
+          
+          <hr id="customhr2" style="width: 18%; height: 2px; margin:4px auto;">
+           <div id="touchwarn2" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div>
+          
+          <div class="row py-3">
+            {% for productobj in productarr %}
+            <div class="col-md-4">
+              <div class="card customaccessorycard" style="width: 18rem;">
+                <img src="{{productobj.img.url}}" class="card-img-top" alt="Zebronic">
+                {% if productobj.specialOffer %}
+                <div class="text-center" style="position: absolute; top:7px; background-color:#1C1E29;color:aliceblue;padding:3px;">Special Offer</div>
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{productobj.name}}</h5>
+                  <p class="card-text">{{productobj.desc}}</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{productobj.desc1}}</li>
+                    <li class="list-group-item">{{productobj.desc2}}</li>
+                    <li class="list-group-item" style="background-color: gold;">PRICE: ₹ {{productobj.price}}</li>
+                  </ul>
+                  <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <a href="https://amzn.to/2XxxIBf" target="_blank" class="btn btn-primary btn-block accessorycardbodybtn">BUY NOW</a>
+                    {% else%}
+                    <a href="/login" target="_blank" class="btn btn-primary btn-block accessorycardbodybtn">BUY NOW</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </section>-->
+          <section class="container customsec2 pt-5">
+            <h2 class="text-center" style="width: 35%; margin: auto;">BLOG</h2>
+          
+            <hr id="customhr2" style="width: 18%; height: 2px; margin:4px auto;">
+            <div class="row">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+                </p>
+              </div>
+              </div>
+            <div class="row">
+            <div class="container">
+                <h2>This is heading</h2>
+                <p>This is a paragraph</p>
+                <button class="btn btn-primary">Read More</button>
+            </div>
+        </div>
+    </section>
+                
+</div>
+      {%endblock content%}
+        

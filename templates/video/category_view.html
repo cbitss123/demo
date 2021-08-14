@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block videoactive %}active{% endblock videoactive %}
+{%load static%}
+
+{%block content%}
+<section class="container customsec2 pt-5">
+    <h2 class="text-center" style="width: 35%; margin: auto;">Mods Categories</h2>
+    <hr id="customhr1" style="width: 16%;
+            height: 2px;
+            margin: 4px auto;">
+            <div id="touchwarn1" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div>
+                <h1>{% if category %}{{category.name}}{% else %}ALL MODS{%endif%}</h1>
+                    <div class="row py-3">
+                    {%for x in article%}
+                    <div class="col-lg col-12 homeimg" id="img1">
+                    <h5>{{x.title}}</h5>
+                        <div>
+                            <!-- <iframe width="360" height="215" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        </div>
+                    <h3><a href="{% url 'video:article_detail' x.slug %}">Show me this mod installation all steps</a></h3>
+                </div>
+                {% endfor %}
+                </div>
+        </section> 
+        {%endblock content%} 

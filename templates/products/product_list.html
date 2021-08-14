@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% block productsactive %}active{% endblock productsactive %}
+    {%load static%}
+{%block content%}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+            <h6 class="text-center" style="margin: auto;font-size:20px;">Product Categories</h6>
+            <hr id="customhr1" style="width: 16%;
+            height: 2px;
+            margin: 4px auto;">
+            <!-- <div id="touchwarn1" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div> -->
+             <ul>
+            {%for cat in category%}
+              
+               <li style="list-style: none; text-align:center;padding:9px 12px;background-color:#aaaaaa"><a style="text-decoration: none;color:black;padding:7px 17px;font-size:18px;" href="{% url 'products:product_list' cat.slug %}">{{cat.name}}</a></li>
+            {%endfor%}
+        </div>
+        <div class="col-md-10">
+      <!-- <section class="container-fluid customsec2 pt-3"> -->
+        <h2 class="text-center" style="width: 35%; margin: auto;">{{category1.name}}</h2>
+        
+        <hr id="customhr2" style="width: 18%; height: 2px; margin:4px auto;">
+        <!-- <div id="touchwarn2" style="width: 40%; margin: auto;"><p class="pt-2 text-center text-danger">Warning: Don't touch the line above</p></div> -->
+        
+        <div class="row py-3">
+          {% for productobj in products1 %}
+          <div class="col-md-4">
+            <div class="card customaccessorycard" style="width: 18rem;">
+              <img src="{{productobj.img.url}}" class="card-img-top" alt="Zebronic">
+              {% if productobj.specialOffer %}
+              <div class="text-center" style="position: absolute; top:7px; background-color:#1C1E29;color:aliceblue;padding:3px;">Special Offer</div>
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{productobj.name}}</h5>
+                <p class="card-text">{{productobj.desc}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{productobj.desc1}}</li>
+                  <li class="list-group-item">{{productobj.desc2}}</li>
+                  <li class="list-group-item" style="background-color: gold;">PRICE: ₹ {{productobj.price}}</li>
+                </ul>
+                <div class="card-body">
+                  <a href="{{productobj.producturl}}" target="_blank" class="btn btn-primary btn-block accessorycardbodybtn">BUY NOW</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        <!-- </section> -->
+      </div>
+      </div>
+    </div>
+    {%endblock content%}

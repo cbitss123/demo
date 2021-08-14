@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#spiderheading{
+    background-color: #2020201a;
+    width: 100%;
+    /* border: 2px solid black; */
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    
+}
+#spiderheading h1{
+    font-size: 3rem;
+    text-align: center;
+}
+/* #vid{
+    width:774px;
+    height: 438px;
+    margin:0 auto;
+     border: 2px solid black; 
+    margin-top: 30px;
+} */
+#vid iframe{
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+    
+}
+.mod ul{
+    /* border: 2px solid black; */
+    width:100%;
+    margin: 25px auto;
+    padding: 30px 30px;
+}
+.mod ul li{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    padding: 10px 40px;
+    margin:25px 0px;
+    list-style: none;
+}
+.videobox{
+    /* border: 2px solid black; */
+    padding-top: 30px;
+    padding-bottom: 15px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#customhr3{
+  
+    animation-name: new3;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  @keyframes new3{
+    0%{
+    background-color: gold;
+    }
+    25%{
+      background-color: greenyellow;
+    }
+    50%{
+      background-color: red;
+    }
+    75%{
+      background-color: azure;
+    }
+    100%{
+     background-color: blueviolet;
+    }
+  }
+
+  #table1{
+    border: 1px solid black;
+    padding:10px;
+  }
+  #table1 td{
+    padding-right:5px;
+    border:1px solid black;
+    text-align:center;
+  }
+
+  
