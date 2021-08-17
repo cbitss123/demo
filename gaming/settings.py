@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import django_heroku
 # import dj_database_url
 from pathlib import Path
 from django.contrib.messages import constants as messages
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize', 
     'embed_video',
-    'whitenoise'              
+                 
 ]
 
 MIDDLEWARE = [
@@ -154,6 +155,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+django_heroku.settings(locals())
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
